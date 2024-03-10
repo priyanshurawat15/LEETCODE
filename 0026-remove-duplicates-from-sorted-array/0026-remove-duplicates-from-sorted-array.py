@@ -3,22 +3,11 @@ class Solution(object):
         """
         :type nums: List[int]
         :rtype: int
-        """
-        hs = {}
-        k = 0
-        
-        # Create a copy of nums
-        x = nums[:]
-        
-        # Count occurrences of each element in x
-        for i in x:
-            hs[i] = 0
-        
-        # Iterate through x to remove duplicates and update counts
-        for i in range(len(x)):
-            if hs[x[i]] == 0:
-                hs[x[i]] += 1
-                nums[k] = x[i]  # Replace the element at index k with the unique element
-                k += 1
+        """ 
+        l=1
+        for r in range(1,len(nums)):
+            if nums[r]!=nums[r-1]:
+                nums[l]=nums[r]
+                l+=1
                 
-        return k
+        return l
