@@ -10,4 +10,7 @@ class Solution(object):
             if nums[i]!=val:
                 nums[x]=nums[i]
                 x=x+1
+                
         return x
+
+        
