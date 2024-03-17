@@ -3,11 +3,15 @@ class Solution(object):
         """
         :type nums: List[int]
         :rtype: int
-        """ 
-        l=1
-        for r in range(1,len(nums)):
-            if nums[r]!=nums[r-1]:
-                nums[l]=nums[r]
-                l+=1
+        """
+        if not nums:
+            return 0  # if the list is empty, there are no duplicates
+        
+        o = 1  # index of the next unique element
+        
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i - 1]:  # check for uniqueness
+                nums[o] = nums[i]  # move the unique element to the next position
+                o += 1  # increment unique elements count
                 
-        return l
+        return o
